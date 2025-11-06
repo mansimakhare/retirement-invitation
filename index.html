@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Invitation - Vidyadhar G. Dhandore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card fade-in delay-1">
+      <div class="border-decor top-left"></div>
+      <div class="border-decor top-right"></div>
+      <div class="border-decor bottom-left"></div>
+      <div class="border-decor bottom-right"></div>
+
+      <h1 class="heading fade-in delay-2"> Retirement Celebration </h1>
+      
+      <!-- Add your photo here -->
+      <div class="photo-container fade-in delay-3">
+        <img src="mama.jpg" alt="Vidyadhar G. Dhandore" class="photo">
+      </div>
+
+      <p class="intro fade-in delay-4">Join us as we honor the remarkable journey of</p>
+      <h2 class="name fade-in delay-5">Mr. Vidyadhar G. Dhandore</h2>
+      
+      <p class="quote fade-in delay-6">
+        “A lifetime of dedication deserves a celebration filled with love, laughter, and memories.”
+      </p>
+      
+      <div class="details fade-in delay-7">
+        <p><strong>📍 Venue:</strong> Aaisaheb, near Aklub Bypass, Indapur</p>
+        <p><strong>📅 Date:</strong> 9th November 2025</p>
+        <p><strong>⏰ Time:</strong> 1:00 PM onwards</p>
+      </div>
+
+     <!-- Countdown Timer -->
+<div class="countdown fade-in delay-8">
+  <h3>Countdown to Celebration:</h3>
+  <div id="timer">
+    <span id="days">00</span> Days
+    <span id="hours">00</span> Hours
+    <span id="minutes">00</span> Minutes
+    <span id="seconds">00</span> Seconds
+  </div>
+</div>
+
+<script>
+// Set the date of the event
+const eventDate = new Date("Nov 9, 2025 00:00:00").getTime();
+
+// Update countdown every second
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  // Time calculations
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display result
+  document.getElementById("days").innerText = days.toString().padStart(2, '0');
+  document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+  document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+  document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+  // When countdown finishes
+  if (distance < 0) {
+    clearInterval(countdown);
+    document.getElementById("timer").innerHTML = "<span style='color:gold;'>🎉 It's Celebration Time! 🎉</span>";
+  }
+}, 1000);
+</script>
+
+
+      <div class="divider fade-in delay-9"></div>
+      
+      <p class="footer fade-in delay-10">
+        We’d love to have you join us as we celebrate his incredible career and new beginnings 💐
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
